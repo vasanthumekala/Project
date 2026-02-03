@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { MdEmail } from "react-icons/md";
 import "./index.css";
 
 export default function Login() {
@@ -9,6 +10,7 @@ export default function Login() {
   });
 
   const handleChange = (e) => {
+    console.log(e.target);
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -19,22 +21,19 @@ export default function Login() {
   function handleSubmit(e) {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Add your login logic here
+    // Add your login logic
   }
 
   return (
     <div className="login-container">
-      <form onSubmit={handleSubmit}>
+      <form className="Form-container" onSubmit={handleSubmit}>
         <h2>Login</h2>
-        <div class="loader">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
         <div className="form-group">
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name" className="label">
+            Name:
+          </label>
           <input
+            className="input"
             type="text"
             id="name"
             name="name"
@@ -45,20 +44,30 @@ export default function Login() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
+          <label htmlFor="email" className="label">
+            Email:
+          </label>
+          <div className="input-wrapper">
+            <MdEmail className="input-icon" aria-hidden="true" />
+            <input
+              className="input"
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email"
+              required
+            />
+          </div>
         </div>
 
         <div className="form-group">
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password" className="label">
+            Password:
+          </label>
           <input
+            className="input"
             type="password"
             id="password"
             name="password"
@@ -68,7 +77,9 @@ export default function Login() {
           />
         </div>
 
-        <button type="submit">Login</button>
+        <button className="button" type="submit">
+          Login
+        </button>
       </form>
     </div>
   );
