@@ -1,0 +1,12 @@
+.not-found-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #1267bb;
+    width: 100vw;
+    background-image: url("https://res.cloudinary.com/dk2bbhmdm/image/upload/v1770142237/download_4_ostbdh.jpg");
+    background-size: cover;
+}
