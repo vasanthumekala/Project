@@ -1,0 +1,28 @@
+19:// const [profileImage, setProfileImage] = useState(null);
+
+25-29://
+    // const handleImageChange = (e) => {
+    //   const file = e.target.files?.[0] || null;
+    //   console.log("Selected file:", file);
+    //   setProfileImage(file);
+    // };
+28-31//
+// const formData = new FormData();
+    // Object.entries(form).forEach(([key, value]) => {
+    //   formData.append(key, value);
+    // });
+
+35//
+// if (profileImage) {
+    //   formData.append("profileImage", profileImage);
+    // }
+
+    // axios
+    //   .post("/api/register", formData)
+    //   .then((res) => {
+    //     console.log("Registration success:", res.data);
+    //     navigate("/login");
+    //   })
+    //   .catch((err) => {
+    //     console.error("Registration error:", err);
+    //   });

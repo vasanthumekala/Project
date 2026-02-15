@@ -1,0 +1,17 @@
+Here's the complete flow, step by step:
+
+Todo://
+Step 1: App starts → Provider is set up
+main.jsx
+  └── App.jsx  ← creates user state + login/logout functions
+        └── AuthContext.Provider value={{ user, login, logout }}
+              └── All Routes (Home, Login, Register, etc.)
+When the app loads, App.jsx runs:
+
+user state starts as null
+login and logout functions are created
+These 3 values are passed into <AuthContext.Provider value={{ user, login, logout }}>
+Now every child component has access to them
+Step 2: User opens /login page
+The Login page renders a form. At the top of the component:
+
